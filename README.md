@@ -1,3 +1,49 @@
+# 1. Test SHT31 sensor
+
+## Install the Grove library
+- From pypi:
+```
+# Python2
+sudo pip install grove.py
+# Python3
+sudo pip3 install grove.py
+``` 
+- Or from source:
+```
+cd grove.py
+# Python2
+sudo pip install .
+# Python3
+sudo pip3 install .
+```
+## Test the sensor
+```
+$ cd grove.py/grove
+$ python grove_temperature_humidity_sensor_sht3x.py 
+```
+
+# Handle I2C interface
+See folder `change_I2C`
+
+Tutorial [How to change I2C Address using Raspberry Pi](http://www.mindsensors.com/content/54-how-to-change-i2c-address-using-raspberry-pi)
+
+```
+$ i2cdetect -y 1
+$ sudo pip install OpenElectrons_i2c
+$ python explorer.py
+```
+Follow on screen instructions, program will display both 7 and 8-bit formats and device information
+
+## Change the I2C to a custom one
+>`$ ./addresschange (i2c address) (new i2c address)`
+
+1. Program will then find the device with current i2c address and display device information
+1. Program will then change the i2c address
+1. Program will attempt to find the device with new i2c address and display device information.
+
+
+----------------------------
+
 ![](https://user-images.githubusercontent.com/4081906/55451417-67559d00-5605-11e9-96b3-4c6bdd3e770c.png)
 
 grove.py
